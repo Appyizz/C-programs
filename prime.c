@@ -1,26 +1,22 @@
-#include<stdio.h>
-void checkPrime(int N){
-    int flag=1;
-    for(int i=2;i<=N/2;i++){
-        if(N%i==0){
-            flag=0;
+#include <stdio.h>
+int prime(int c);
+int main(){
+    int a;
+    printf("Enter a number");
+    scanf("%d",&a);
+    prime(a);
+    return 0;
+}
+int prime(int c){
+    for (int i=2;i<c;i++){
+        if(c%i==0){
+            printf("It is not a prime number\n");
             break;
         }
         else{
-            flag=1;
+            printf("It is a prime number\n");
             break;
         }
-    } 
-    if(flag){
-        printf("The Number is a  Prime Number\n");
     }
-    else{
-        printf("The Number is  not a Prime Number");
-    }
-    return;
-}
-int main(){
-    int N=7;
-   checkPrime(N);
-    return 0;
+    
 }
