@@ -1,24 +1,19 @@
-#include <stdio.h>
+#include<stdio.h>               //Pallindrome=12321
+#include<string.h>              //maam
 
 int main(){
-        int n,original,reverse=0,rem;
-        printf("Enter an integer:\n");
-        scanf("%d",&n);
-	original=n;
-        while(n!=0){
-                rem=n%10;
-                reverse=reverse*10+rem;
-                n/=10;
+    char str[]={"lses"};
+   // prinf("Enter a string to check");
+    //scanf("%s",str);
+    int l=0;                                 //level     {01234}  
+    int h = strlen(str)-1;                  //char str[]={level};
+
+    while(h>1){
+        if(str[l++] != str[h--]){               //level,e=e
+            printf("It is not a pallindrome\n",str);
+            return 0;
         }
-	if(original==reverse){
-		printf("It is a Pallindrome Number");
-	
-	
-	}
-	else{
-		printf("It is not a Pallindrome");
-	
-	}
+    }
+    printf("It is a pallindrome");
+    return 0;
 }
-
-
